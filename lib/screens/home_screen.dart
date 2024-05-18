@@ -117,15 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 );
               },
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Perfil'),
-              onTap: () {
-                Navigator.pop(context);
-                // Implementa la pantalla de Perfil aquí
-              },
-            ),
+            ),            
             ListTile(
               leading: Icon(Icons.people),
               title: Text('Empleados'),
