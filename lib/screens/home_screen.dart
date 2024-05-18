@@ -4,6 +4,7 @@ import '../models/user.dart';
 import 'edit_user_screen.dart';
 import 'login_screen.dart';
 import 'file_upload_screen.dart'; 
+import 'post_screen.dart'; 
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -108,8 +109,11 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: Icon(Icons.message),
               title: Text('Publicaciones'),
               onTap: () {
-                Navigator.pop(context);
-                // Implementa la pantalla de Mensajes aquí
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => PostScreen(),
+                  ),
+                );
               },
             ),
             ListTile(

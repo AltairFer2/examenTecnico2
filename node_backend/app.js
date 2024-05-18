@@ -13,6 +13,7 @@ const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const employeeRoutes = require('./routes/employeeRoutes');
 const fileRoutes = require('./routes/fileRoutes');
+const postRoutes = require('./routes/postsRoutes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/employees', employeeRoutes);
 app.use('/api/files', fileRoutes);
+app.use('/api/posts', postRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -17,10 +17,12 @@ class AuthService {
       );
 
       if (response.statusCode == 200) {
-        var data = json.decode(response.body);
+        var data = json.decode(response.body);        
         if (data['token'] != null) {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setString('jwt', data['token']); // Guarda el token
+          await prefs.setString('userId', data['userId']);
+          
           return true;
         }
         return false;
