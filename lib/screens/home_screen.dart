@@ -1,3 +1,4 @@
+// home_screen.dart
 import 'package:flutter/material.dart';
 import '../services/user_service.dart';
 import '../models/user.dart';
@@ -5,6 +6,7 @@ import 'edit_user_screen.dart';
 import 'login_screen.dart';
 import 'file_upload_screen.dart'; 
 import 'post_screen.dart'; 
+import 'employee_list_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -122,6 +124,17 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 Navigator.pop(context);
                 // Implementa la pantalla de Perfil aquí
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.people),
+              title: Text('Empleados'),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => EmployeeListScreen(),
+                  ),
+                );
               },
             ),            
           ],

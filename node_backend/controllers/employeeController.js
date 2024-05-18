@@ -69,10 +69,9 @@ exports.updateEmployee = async (req, res) => {
 
 exports.deleteEmployee = async (req, res) => {
     try {
-        const employee = await Employee.findById(req.params.id);
+        const employee = await Employee.findByIdAndDelete(req.params.id);
         if (!employee) return res.status(404).json({ msg: 'Empleado no encontrado' });
 
-        await employee.remove();
         res.json({ msg: 'Empleado eliminado' });
     } catch (err) {
         console.error(err.message);
